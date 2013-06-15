@@ -1,0 +1,9 @@
+client 0: 'System' [type=kernel]
+    0 'Timer           '
+    1 'Announce        '
+client 14: 'Midi Through' [type=kernel]
+    0 'Midi Through Port-0'
+client 24: 'KeyRig 49' [type=kernel]
+    0 'KeyRig 49 MIDI 1'
+client 127: ' crazy testin\' thing'
+   24 'lolwut'

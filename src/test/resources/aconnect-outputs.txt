@@ -1,0 +1,4 @@
+client 14: 'Midi Through' [type=kernel]
+    0 'Midi Through Port-0'
+client 128: 'ZynAddSubFX' [type=user]
+    0 'ZynAddSubFX     '
