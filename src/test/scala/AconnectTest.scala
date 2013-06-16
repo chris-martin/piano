@@ -1,4 +1,4 @@
-package aconnect
+package piano.aconnect
 
 import org.scalatest.FunSuite
 

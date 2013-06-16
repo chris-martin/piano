@@ -1,26 +1,20 @@
-import com.typesafe.config.Config
+package piano
+
+import config._
 
 object Piano {
 
   def main(args: Array[String]) {
-
-    import com.typesafe.config.ConfigFactory.{
-      empty => emptyConfig,
-      parseString => parseConfigString,
-      load => systemConfig
-    }
-
-    val piano = new Piano()({
-      val argsConfig = args.map(parseConfigString).foldLeft(emptyConfig)(_ withFallback _)
-      argsConfig withFallback systemConfig.getConfig("piano")
-    })
-
+    val config = argsConfig(args) withFallback defaultConfig
+    val piano = new Piano(config)
     piano.start()
   }
 
+  def defaultConfig = systemConfig("piano")
+
 }
 
-class Piano()(implicit config: Config) {
+class Piano(config: Config = Piano.defaultConfig) {
 
   import scala.sys.process._
 

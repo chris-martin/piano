@@ -1,3 +1,5 @@
+package piano
+
 package aconnect {
 
   case class Client(id: Int, name: String, ports: Seq[Port])
