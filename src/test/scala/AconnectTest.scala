@@ -5,7 +5,7 @@ import org.scalatest.FunSuite
 class AconnectTest extends FunSuite {
 
   test("parse inputs") {
-    expect(Seq(
+    expect(Clients(Seq(
 
       Client(0, "System", Seq(
         Port(0, "Timer"),
@@ -26,14 +26,14 @@ class AconnectTest extends FunSuite {
         Port(24, "lolwut")
       ))
 
-    )) {
+    ))) {
       parseString(read("aconnect-inputs.txt"))
     }
 
   }
 
   test("parse outputs") {
-    expect(Seq(
+    expect(Clients(Seq(
 
       Client(14, "Midi Through", Seq(
         Port(0, "Midi Through Port-0")
@@ -43,7 +43,7 @@ class AconnectTest extends FunSuite {
         Port(0, "ZynAddSubFX")
       ))
 
-    )) {
+    ))) {
       parseString(read("aconnect-outputs.txt"))
     }
   }
